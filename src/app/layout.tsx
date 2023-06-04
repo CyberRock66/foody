@@ -1,3 +1,4 @@
+import { LayoutBase } from '@/layouts/LayoutBase/LayoutBaset';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 
@@ -10,7 +11,9 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en">
-    <body className={inter.className}>{children}</body>
+    <body className={inter.className}>
+      <LayoutBase>{children}</LayoutBase>
+    </body>
   </html>
 );
 

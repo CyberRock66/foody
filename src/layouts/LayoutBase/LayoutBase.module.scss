@@ -1,0 +1,17 @@
+.layout_cabinet {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin-left: 110px;
+  background-color: $cabinet-main-color;
+  min-height: calc(100vh - 95px);
+  position: relative;
+}
+
+@media (max-width: $md) {
+  .content {
+    margin-left: 0;
+  }
+}

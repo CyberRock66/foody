@@ -1,0 +1,24 @@
+.header{
+    padding: 12px 22px 12px 155px;
+    margin-left: 110px;
+    height: 95px;
+    background-color: $white-color;
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+      
+    }
+}
+
+.upload{
+    button{
+        width: 220px;
+        position: relative;
+        svg{
+            position: absolute;
+            right: 20px;
+            margin-left: 20px;
+        }
+    }
+}
