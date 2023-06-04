@@ -2,6 +2,11 @@ import { IProduct } from '@/types/models/product.model';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const options = {
+  style: 'currency',
+  currency: 'USD',
+};
+
 export const Card: React.FC<Pick<IProduct, 'title' | 'image' | 'price'>> = ({
   title,
   image,
@@ -80,7 +85,7 @@ export const Card: React.FC<Pick<IProduct, 'title' | 'image' | 'price'>> = ({
       </div>
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">
-          {price}
+          {new Intl.NumberFormat('en-US', options).format(price)}
         </span>
         <Link
           href="/"
