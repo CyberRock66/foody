@@ -6,12 +6,12 @@ import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 import Link from 'next/link';
+
 import styles from './Sidebar.module.scss';
 import { SidebarProps } from './Sidebar.props';
 import { sidebarData } from './Sidebar.data';
 
 export const Sidebar: React.FC<SidebarProps> = () => {
-  const router = useRouter();
   const pathname = usePathname();
   return (
     <aside className={styles.sidebar}>
@@ -23,11 +23,14 @@ export const Sidebar: React.FC<SidebarProps> = () => {
               <Link
                 href={item.route}
                 className={
-                  pathname === `${item.route}` ? `${styles.active}` : ''
+                  pathname === `${item.route}` ? `${styles.active} ` : ''
                 }
               >
                 <div className={styles.sidebar_list__box}>
-                  <span>{item.title}</span>
+                  <div>{item.icon}</div>
+                  <div className={styles.sidebar_list__box}>
+                    <span>{item.title}</span>
+                  </div>
                 </div>
               </Link>
             </li>

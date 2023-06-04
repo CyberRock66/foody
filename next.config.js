@@ -6,6 +6,9 @@ const nextConfig = {
     includePaths: [path.join(__dirname, './src/styles')],
     prependData: `@import "variables.scss";`,
   },
+  images: {
+    domains: [`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}`],
+  },
   webpack(config) {
     config.module.rules.push({
       loader: '@svgr/webpack',
