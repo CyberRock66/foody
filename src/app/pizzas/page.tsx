@@ -6,17 +6,22 @@ const PizzasPage = async () => {
   const { data } = await supabase
     .from('product')
     .select()
-    .eq('category', 'pizzas');
-
-  console.log('data', data);
+    .eq('category', 'pizzas')
+    .returns<IProduct[]>();
 
   return (
-    <div>
-      <div>pizza</div>
-      {data?.map((product: IProduct) => (
-        <Card key={product.id} title={product.title} image={product.image} />
-      ))}
-    </div>
+    <section className="mx-auto max-w-full px-4 py-6 sm:px-8 sm:py-16 lg:max-w-full lg:px-">
+      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        {data?.map((product: IProduct) => (
+          <Card
+            key={product.id}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

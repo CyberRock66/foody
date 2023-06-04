@@ -1,22 +1,28 @@
+import { IProduct } from '@/types/models/product.model';
+import Link from 'next/link';
 import Image from 'next/image';
 
-export const Card = ({ title, image }) => (
+export const Card: React.FC<Pick<IProduct, 'title' | 'image' | 'price'>> = ({
+  title,
+  image,
+  price,
+}) => (
   <article className='class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"'>
-    <a href="#" className="h-64 w-96 relative block">
+    <Link href="/" className="h-64 w-full relative block ">
       <Image
-        class="p-8 rounded-t-lg"
+        className="p-8 rounded-t-lg"
         src={image}
         alt=""
         layout="fill"
         objectFit="cover"
       />
-    </a>
-    <div class="px-5 pb-5">
-      <a href="#">
-        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+    </Link>
+    <div className="px-5 pb-5">
+      <Link href="/">
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {title}
         </h5>
-      </a>
+      </Link>
       <div className="flex items-center mt-2.5 mb-5">
         <svg
           aria-hidden="true"
@@ -74,14 +80,14 @@ export const Card = ({ title, image }) => (
       </div>
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">
-          $599
+          {price}
         </span>
-        <a
-          href="#"
+        <Link
+          href="/"
           className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
         >
           Add to cart
-        </a>
+        </Link>
       </div>
     </div>
   </article>
