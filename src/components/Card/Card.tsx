@@ -4,11 +4,7 @@ import { IProduct } from '@/types/models/product.model';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCartStore } from '@/store/useCart';
-
-const options = {
-  style: 'currency',
-  currency: 'USD',
-};
+import { convertToCurrency, optionsCurrencyUSD } from '@/utils/common.util';
 
 export const Card: React.FC<IProduct> = ({ ...product }) => {
   const addToCart = useCartStore((state) => state.addToCart);
@@ -87,7 +83,7 @@ export const Card: React.FC<IProduct> = ({ ...product }) => {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            {new Intl.NumberFormat('en-US', options).format(product.price)}
+            {convertToCurrency(optionsCurrencyUSD, product.price)}
           </span>
           <button
             type="button"

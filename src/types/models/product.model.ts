@@ -5,5 +5,5 @@ export interface IProduct {
   category: string;
   price: number;
   created_at?: string;
-  quantity?: number;
+  quantity: number;
 }
