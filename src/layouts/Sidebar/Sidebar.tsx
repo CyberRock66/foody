@@ -2,21 +2,24 @@
 
 'use client';
 
-import React from 'react';
 import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
 
+import Image from 'next/image';
 import styles from './Sidebar.module.scss';
 import { SidebarProps } from './Sidebar.props';
 import { sidebarData } from './Sidebar.data';
+import Logo from './df-logo.jpg';
 
 export const Sidebar: React.FC<SidebarProps> = () => {
   const pathname = usePathname();
   return (
     <aside className={styles.sidebar}>
       <nav>
-        <div className={styles.sidebar_logo} />
+        <Link href="/" className={styles.sidebar_logo}>
+          <Image src={Logo} alt="logo" width={120} h={120} priority />
+        </Link>
         <ul className={styles.sidebar_list}>
           {sidebarData.map((item) => (
             <li key={`/${item.id}`}>

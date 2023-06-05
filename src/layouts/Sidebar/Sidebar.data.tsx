@@ -1,5 +1,6 @@
 import { FaHamburger } from 'react-icons/fa';
 import { GiFullPizza } from 'react-icons/gi';
+import { BiSushi } from 'react-icons/bi';
 
 export const sidebarData = [
   {
@@ -8,5 +9,6 @@ export const sidebarData = [
     icon: <GiFullPizza />,
     route: '/pizzas',
   },
-  { id: 2, title: 'burgers', icon: <FaHamburger />, route: '/burgers' },
+  { id: 2, title: 'Burgers', icon: <FaHamburger />, route: '/burgers' },
+  { id: 2, title: 'Sushi', icon: <BiSushi />, route: '/sushi' },
 ];

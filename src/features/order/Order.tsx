@@ -2,11 +2,10 @@
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { CardBasket } from '@/components/CardBasket/CardBasket';
+import { CardBasket, OrderModal } from '@/components';
 import { useCartStore } from '@/store/useCart';
 import { IProduct } from '@/types/models/product.model';
 import { useState } from 'react';
-import { OrderModal } from '@/components/OrderModal/OrderModal';
 import { orderFormSchema } from './Order.schema';
 import { IOrder } from './Order.model';
 

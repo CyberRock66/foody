@@ -11,7 +11,7 @@ export const Card: React.FC<IProduct> = ({ ...product }) => {
 
   return (
     <article className='class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"'>
-      <Link href="/" className="h-64 w-full relative block ">
+      <div className="h-64 w-full relative block ">
         <Image
           className="p-8 rounded-t-lg"
           src={product.image}
@@ -19,13 +19,12 @@ export const Card: React.FC<IProduct> = ({ ...product }) => {
           layout="fill"
           objectFit="cover"
         />
-      </Link>
+      </div>
       <div className="px-5 pb-5">
-        <Link href="/">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            {product.title}
-          </h5>
-        </Link>
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          {product.title}
+        </h5>
+
         <div className="flex items-center mt-2.5 mb-5">
           <svg
             aria-hidden="true"

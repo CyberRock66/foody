@@ -20,9 +20,7 @@ export const CardBasket: React.FC<IProduct> = ({ ...product }) => {
       <div className="ml-4 flex flex-1 flex-col">
         <div>
           <div className="flex justify-between text-base font-medium text-gray-900">
-            <h3>
-              <a href={product.title}>{product.title}</a>
-            </h3>
+            <h3>{product.title}</h3>
             <p className="ml-4">
               {convertToCurrency(optionsCurrencyUSD, product.price)}
             </p>

@@ -1,4 +1,4 @@
-import { Card } from '@/components/Card/Card';
+import { Card } from '@/components';
 import { supabase } from '@/lib/supabase';
 import { IProduct } from '@/types/models/product.model';
 
