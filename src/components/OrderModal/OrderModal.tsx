@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { ModalType } from '@/types/modal.type';
 import { Dialog, Transition } from '@headlessui/react';
 import { useRouter } from 'next/navigation';

@@ -18,7 +18,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
     <aside className={styles.sidebar}>
       <nav>
         <Link href="/" className={styles.sidebar_logo}>
-          <Image src={Logo} alt="logo" width={120} h={120} priority />
+          <Image src={Logo} alt="logo" width={120} height={120} priority />
         </Link>
         <ul className={styles.sidebar_list}>
           {sidebarData.map((item) => (
