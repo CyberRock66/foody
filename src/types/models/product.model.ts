@@ -4,5 +4,6 @@ export interface IProduct {
   image: string;
   category: string;
   price: number;
-  created_at: string;
+  created_at?: string;
+  quantity?: number;
 }

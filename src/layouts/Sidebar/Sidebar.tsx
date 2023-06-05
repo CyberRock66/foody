@@ -3,7 +3,7 @@
 'use client';
 
 import React from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
         <div className={styles.sidebar_logo} />
         <ul className={styles.sidebar_list}>
           {sidebarData.map((item) => (
-            <li key={item.id}>
+            <li key={`/${item.id}`}>
               <Link
                 href={item.route}
                 className={
