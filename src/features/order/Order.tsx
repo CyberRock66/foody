@@ -25,6 +25,7 @@ export const Order = () => {
   });
 
   const onSubmit: SubmitHandler<IOrder> = async (formData) => {
+    // eslint-disable-next-line no-console
     console.log('formData', formData);
     setFormComplete(true);
     clearStore();
