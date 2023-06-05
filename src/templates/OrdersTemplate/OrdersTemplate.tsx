@@ -6,12 +6,26 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ModalType } from '@/types/modal.type';
 import { useCartStore } from '@/store/useCart';
 import { IProduct } from '@/types/models/product.model';
-import { convertToCurrency, optionsCurrencyUSD } from '@/utils/common.util';
+import {
+  convertToCurrency,
+  generateRandomPath,
+  optionsCurrencyUSD,
+} from '@/utils/common.util';
 import { CardBasket } from '@/components/CardBasket/CardBasket';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export const OrdersTemplate: React.FC<ModalType> = ({ open, setOpen }) => {
+  const router = useRouter();
   const cartProducts = useCartStore((state) => state.cart);
   const cartProductsTotalPrice = useCartStore((state) => state.totalPrice);
+
+  const redirectToOrderPage = () => {
+    setOpen(false);
+    return cartProducts.length > 0
+      ? router.push(`orders/${generateRandomPath(10)}`)
+      : setOpen(false);
+  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -84,12 +98,13 @@ export const OrdersTemplate: React.FC<ModalType> = ({ open, setOpen }) => {
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className="mt-6">
-                        <a
-                          href="/"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-orange-700 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700"
+                        <button
+                          type="button"
+                          onClick={redirectToOrderPage}
+                          className="flex items-center w-full justify-center rounded-md border border-transparent bg-orange-700 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700"
                         >
                           Checkout
-                        </a>
+                        </button>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>
