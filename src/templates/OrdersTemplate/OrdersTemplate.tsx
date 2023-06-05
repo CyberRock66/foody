@@ -12,7 +12,6 @@ import {
   optionsCurrencyUSD,
 } from '@/utils/common.util';
 import { CardBasket } from '@/components/CardBasket/CardBasket';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export const OrdersTemplate: React.FC<ModalType> = ({ open, setOpen }) => {
