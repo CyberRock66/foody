@@ -1,7 +1,6 @@
 'use client';
 
 import { IProduct } from '@/types/models/product.model';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useCartStore } from '@/store/useCart';
 import { convertToCurrency, optionsCurrencyUSD } from '@/utils/common.util';
