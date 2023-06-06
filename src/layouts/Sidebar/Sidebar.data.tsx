@@ -10,5 +10,5 @@ export const sidebarData = [
     route: '/pizzas',
   },
   { id: 2, title: 'Burgers', icon: <FaHamburger />, route: '/burgers' },
-  { id: 2, title: 'Sushi', icon: <BiSushi />, route: '/sushi' },
+  { id: 3, title: 'Sushi', icon: <BiSushi />, route: '/sushi' },
 ];
